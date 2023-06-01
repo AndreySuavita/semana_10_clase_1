@@ -5,15 +5,24 @@ export class Episodio{
     resumen:string
     duracion:number
 
-    serie:Serie
+    serie:Serie | undefined;
 
-    constructor(nombre:string,resumen:string,duracion:number,serie:Serie){
+    constructor(nombre:string,resumen:string,duracion:number,serie?:Serie|undefined){
         this.nombre = nombre
         this.resumen = resumen
         this.duracion = duracion
 
-        this.serie = serie
+        if (serie){
+            this.serie = serie
+        }else{
+            this.serie = undefined
+        }
+
 
     }
     
+    agregarSerie (serie:Serie){
+        this.serie = serie
+    }
+
 }

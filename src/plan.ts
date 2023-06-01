@@ -1,14 +1,17 @@
 import { Plataforma } from "./plataforma.js";
 
 export class Plan{
+
     precio:number
+    plataforma:Plataforma | undefined
 
-    plataforma:Plataforma
 
-    constructor(precio:number,plataforma:Plataforma){
+    constructor(precio:number,plataforma?:Plataforma){
         this.precio = precio
-
-        this.plataforma = plataforma
-
+        if (plataforma){
+            this.plataforma = plataforma
+        }else{
+            this.plataforma = undefined
+        }
     }
 }

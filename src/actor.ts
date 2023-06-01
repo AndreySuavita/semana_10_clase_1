@@ -1,6 +1,7 @@
 import { Serie } from "./serie.js";
 import { Persona } from "./persona.js";
 
+
 export class Actor extends Persona{
 
     series:Serie[]
@@ -9,9 +10,7 @@ export class Actor extends Persona{
 
         this.series = []
     }
-    crearSerie (imagen:string,nombre:string):void{
-        this.series.push(new Serie(imagen,nombre))
-    }
+
     agregarSerie (serie:Serie){
         this.series.push(serie)
     }
@@ -21,16 +20,5 @@ export class Actor extends Persona{
             this.series.splice(index, 1)
         }
     }
-    buscarSerie(Serie_nombre:string){
-        const index = this.series.find(serie => serie.nombre == Serie_nombre)
-        if (index != undefined){
-            console.log(index)
-        }else{
-            console.log("La serie no se encuentra")
-        }
-    }
 
-    listarSeries(){
-        console.log(this.series)
-    }
 }

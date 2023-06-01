@@ -1,5 +1,6 @@
 import { Serie } from "./serie.js";
 import { Plan } from "./plan.js";
+import { Episodio } from "./episodio.js";
 
 export class Plataforma{
     nombre:string
@@ -20,13 +21,6 @@ export class Plataforma{
     crearPlan (precio:number){
         this.planes.push(new Plan(precio,this))
     }
-    eliminarPlan(plan:Plan){
-        const index = this.planes.indexOf(plan)
-        if(index > -1){
-            this.planes.splice(index, 1)
-        }
-    }
-
     buscarPlan(plan:Plan){
         const index = this.planes.indexOf(plan)
         if(index > -1){
@@ -35,14 +29,17 @@ export class Plataforma{
             console.log("El plan no se encuentra")
         }
     }
+    eliminarPlan(plan:Plan){
+        const index = this.planes.indexOf(plan)
+        if(index > -1){
+            this.planes.splice(index, 1)
+        }
+    }
 
-    listarPlan(){
+    listarPlanes(){
         console.log(this.planes)
     }
 
-    crearSerie (imagen:string,nombre:string){
-        this.series.push(new Serie(imagen,nombre))
-    }
     agregarSerie (serie:Serie){
         this.series.push(serie)
     }
@@ -52,16 +49,24 @@ export class Plataforma{
             this.series.splice(index, 1)
         }
     }
-    buscarSerie(Serie_nombre:string){
+    detalleSerie(Serie_nombre:string){
         const index = this.series.find(serie => serie.nombre == Serie_nombre)
         if (index != undefined){
-            console.log(index)
+            //console.log(index)
+            console.log("Detalle de la serie")
+            console.log("Nombre de la serie: "+index.nombre)
+            console.log("Direccion de la imagen: "+index.imagen)
+
+            this.listarSeries()
         }else{
             console.log("La serie no se encuentra")
         }
     }
 
     listarSeries(){
-        console.log(this.series)
+        console.log("Lista de Series:")
+        this.series.forEach((value) => {
+            console.log("[+] "+value.nombre)
+        })
     }
 }
