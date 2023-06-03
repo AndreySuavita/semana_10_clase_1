@@ -14,11 +14,13 @@ export class Actor extends Persona{
     agregarSerie (serie:Serie){
         this.series.push(serie)
     }
-    eliminarSerie(serie:Serie){
-        const index = this.series.indexOf(serie)
-        if(index > -1){
-            this.series.splice(index, 1)
-        }
-    }
 
+    detalleActor(){
+
+        console.log("[+] Detalle del actor")
+        console.log("[-] Nombre del actor: "+this.nombre)
+        console.log("[-] Descripción del actor: "+this.descripcion)
+        console.log("[-] Direccioón fotografia: "+this.fotografia)
+
+    }
 }

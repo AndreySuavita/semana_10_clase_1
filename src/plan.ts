@@ -14,4 +14,8 @@ export class Plan{
             this.plataforma = undefined
         }
     }
+
+    agregarPlataforma(plataforma:Plataforma){
+        this.plataforma = plataforma
+    }
 }

@@ -7,10 +7,10 @@ export class Actor extends Persona {
     agregarSerie(serie) {
         this.series.push(serie);
     }
-    eliminarSerie(serie) {
-        const index = this.series.indexOf(serie);
-        if (index > -1) {
-            this.series.splice(index, 1);
-        }
+    detalleActor() {
+        console.log("[+] Detalle del actor");
+        console.log("[-] Nombre del actor: " + this.nombre);
+        console.log("[-] Descripción del actor: " + this.descripcion);
+        console.log("[-] Direccioón fotografia: " + this.fotografia);
     }
 }

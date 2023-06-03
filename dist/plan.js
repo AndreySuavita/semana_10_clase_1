@@ -8,4 +8,7 @@ export class Plan {
             this.plataforma = undefined;
         }
     }
+    agregarPlataforma(plataforma) {
+        this.plataforma = plataforma;
+    }
 }

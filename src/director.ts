@@ -15,11 +15,12 @@ export class Director extends Persona{
     agregarSerie (serie:Serie){
         this.series.push(serie)
     }
-    eliminarSerie(serie:Serie){
-        const index = this.series.indexOf(serie)
-        if(index > -1){
-            this.series.splice(index, 1)
-        }
-    }
+    detalleDirector(){
+        console.log("[+] Detalle del Director")
+        console.log("[-] Nombre del director: "+this.nombre)
+        console.log("[-] Descripción: "+this.descripcion)
+        console.log("[-] Dirección de la fotografía: "+this.fotografia)
 
+    }
 }
+
